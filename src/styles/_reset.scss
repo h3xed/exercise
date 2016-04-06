@@ -1,0 +1,17 @@
+html, body {
+  height: 100%;
+}
+
+#app, .wrapper {
+  min-height: 100%;
+  height: 100%;
+  position: relative;
+}
+
+a {
+  color: #6f6f6f;
+}
+
+a.active, a:hover {
+  color: #f8780f;
+}
