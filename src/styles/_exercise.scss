@@ -1,0 +1,38 @@
+.exercise {
+  margin-top: 30px;
+
+  .exercise-items {
+    margin-top: 30px;
+
+    .exercise-item {
+      text-align: center;
+      margin-bottom: 30px;
+
+      .btn-toolbar {
+        text-align: center;
+        margin-top: 5px;
+
+        .btn-group {
+          float: none;
+        }
+      }
+
+      .image-container {
+        min-height: 155px;
+
+        img {
+          width: 135px;
+        }
+      }
+
+      &.exercise-two {
+        .image-container {
+          img {
+            width: auto;
+            height: 385px;
+          }
+        }
+      }
+    }
+  }
+}

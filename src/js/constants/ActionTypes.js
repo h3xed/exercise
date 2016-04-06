@@ -1,0 +1,4 @@
+export const SET_ANSWER = 'SET_ANSWER';
+export const RESET_ANSWERS = 'RESET_ANSWERS';
+export const TOGGLE_EXERCISE = 'TOGGLE_EXERCISE';
+export const CHECK_ANSWERS = 'CHECK_ANSWERS';

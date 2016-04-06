@@ -1,6 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class Header extends Component {
+import { toggleExercise } from '../actions/exercises';
+
+const propTypes = {
+  selectedExercise: PropTypes.string.isRequired
+}
+
+class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleLinkClick = this.handleLinkClick.bind(this);
+  }
+
+  handleLinkClick(exercise, e) {
+    e.preventDefault();
+
+    const { dispatch, selectedExercise } = this.props;
+
+    if (exercise !== selectedExercise) {
+      dispatch(toggleExercise());
+    }
+  }
+
+  getLinkClassName(exercise) {
+    const { selectedExercise } = this.props;
+    if (exercise === selectedExercise) {
+      return 'active';
+    } else {
+      return '';
+    }
+  }
+
   render() {
     return (
       <header>
@@ -11,12 +42,18 @@ export default class Header extends Component {
           <div className="menu">
             <ul>
               <li>
-                <a href="#">
+                <a
+                  href="#"
+                  className={this.getLinkClassName('exerciseOne')}
+                  onClick={this.handleLinkClick.bind(null, 'exerciseOne')} >
                     Exercise 1
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a
+                  href="#"
+                  className={this.getLinkClassName('exerciseTwo')}
+                  onClick={this.handleLinkClick.bind(null, 'exerciseTwo')} >
                     Exercise 2
                 </a>
               </li>
@@ -27,3 +64,7 @@ export default class Header extends Component {
     )
   }
 }
+
+Header.propTypes = propTypes;
+
+export default Header;
